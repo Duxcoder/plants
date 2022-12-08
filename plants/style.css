@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body, p {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 109px;
+    min-height: 100%;
+    width: 1440px;
+}
+
+/* Header */
+
+header {
+    height: 134px;
+    width: 100vw;
+    background-color: #EDF2EC;
+}
+
+header .header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header__wrapper .logo img {
+    width: 20px;
+    height: 20px;
+}
+
+.header__wrapper .logo .logo__text {
+    font-family: 'Inika';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    margin-left: -3px;
+    color: #000000;
+}
+
+.header__wrapper .navigation ul {
+    display: flex;
+    gap: 49px;
+    
+}
+
+.header__wrapper .navigation ul li {
+    list-style-type: none;
+}
+
+.header__wrapper .navigation a {
+    font-family: 'Inika';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 50px;
+    color: #010201;
+}
+
+.header__wrapper .navigation a.active {
+    font-weight: 700;
+    color: #E06733;
+}
+
+/* Welcome */
+
+section.welcome {
+    height: 532px;
+    width: 100vw;
+    background-color: #EDF2EC;
+}
+
+.welcome .welcome__wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.welcome .welcome__wrapper .img__background {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex: 1;
+}
+
+.welcome__wrapper .img__background img {
+    width: 450px;
+    height: 408px;
+}
+
+.welcome .welcome__wrapper .welcome__content {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-items: center;
+    margin-left: 125px;
+    margin-top: 35px;
+    width: 550px;
+    flex: 1;
+} 
+
+.welcome__wrapper .welcome__content h1 {
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 50px;
+    margin: 0;
+    color: #717171;
+}
+
+.welcome__wrapper .welcome__content h1 .green {
+    color: #499A18;
+}
+
+.welcome__wrapper .welcome__content p {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 35px;
+    padding: 44px 0 48px 0;
+    color: #636060;
+}
+
+.welcome__wrapper .welcome__content button {
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 10px 24px;
+    border: 2px solid #E06733;
+    border-radius: 10px;
+    color: #000000;
+}
