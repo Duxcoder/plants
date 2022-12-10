@@ -442,3 +442,80 @@ section.prices {
     margin-top: 33px;
     margin-right: -8px;
 }
+
+/* Contact us */
+
+section.contacts {
+    height: 550px;
+    width: 100vw;
+    background-color: var(--background);
+}
+
+.contacts .contacts__wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.contacts__wrapper .farmer {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.contacts__wrapper .contacts__header {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-left: 45px;
+}
+
+.contacts__wrapper .contacts__header h2 {
+    font-family: 'Inika';
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 52px;
+    color: var(--green);
+}
+
+.contacts__wrapper .contacts__content {
+    width: 450px;
+}
+
+.contacts__content .address__block {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 100%;
+    min-height: 50px;
+    margin-top: 146px;
+    background: #D6E7D2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.contacts__content .address__block::after {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: calc(50% - 8px);
+    right: 35px;
+    content: url('img/arrow_white.svg');
+    color: #FFFFFF;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    line-height: 0px;
+    background-color: #AEA1A1;
+}
+
+.contacts__content .address__block span {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 40px;
+    letter-spacing: 0.05em;
+    padding-left: 20px;
+    color: var(--gray);
+}
+
