@@ -148,6 +148,8 @@ section.welcome {
     border: 2px solid var(--orange);
     border-radius: 10px;
     color: #000000;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 /* About */
@@ -255,6 +257,8 @@ section.service {
     border: 1px solid var(--orange);
     border-radius: 5px;
     color: var(--orange);
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .service__wrapper .service__content {
@@ -430,6 +434,8 @@ section.prices {
     border: 1px solid var(--orange);
     border-radius: 5px;
     color: var(--orange);
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .contact__content img {
