@@ -313,3 +313,126 @@ section.service {
     padding-bottom: 36px;
     color: var(--gray);
 }
+
+/* Prices */
+
+section.prices {
+    height: 560px;
+    width: 100vw;
+    background-color: #FFFFFF;
+}
+
+.prices .prices__wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.prices__wrapper .prices__block {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.prices .prices__wrapper h2 {
+    margin-top: 39px;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    color: #000000;
+}
+
+.prices__block .prices__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    padding: 34px 0;
+    margin-top: 27px;
+    height: auto;
+    width: 332px;
+    border: 1px solid #E3E1D5;
+    border-radius: 20px;
+}
+
+.prices__content .btn__prices {
+    display: flex;
+    position: relative;
+    align-items: center;
+    min-width: 250px;
+    height: 50px;
+    padding: 16px 40px;
+    background: var(--background);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.prices__content .btn__prices::after {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: calc(50% - 8px);
+    right: 40px;
+    content: url('img/arrow.svg');
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    line-height: 0px;
+    background-color: #D9D9D9;
+}
+
+.btn__prices span {
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.prices__wrapper .prices__contact {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 452px;
+}
+
+.prices__contact .contact__header h2 {
+    text-align: right;
+    margin-top: 39px;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50px;
+    color: #000000;
+}
+
+.contact__header span.green {
+    color: var(--green)
+}
+
+.contact__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.contact__content button.btn__orange {
+    min-width: 161px;
+    margin-top: 7px;
+    padding: 11px 33px;
+    font-family: 'Inika';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    border: 1px solid var(--orange);
+    border-radius: 5px;
+    color: var(--orange);
+}
+
+.contact__content img {
+    margin-top: 33px;
+    margin-right: -8px;
+}
