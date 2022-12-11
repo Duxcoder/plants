@@ -9,6 +9,7 @@
 * {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
 }
 
 html, body, p {
