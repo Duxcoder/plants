@@ -101,8 +101,9 @@ section.welcome {
 }
 
 .welcome__wrapper .img__background img {
-    width: 450px;
-    height: 408px;
+    width: 458px;
+    height: 416px;
+    margin-left: -4px;
 }
 
 .welcome .welcome__wrapper .welcome__content {
@@ -403,7 +404,7 @@ section.prices {
     width: 452px;
 }
 
-.prices__contact .contact__header h2 {
+.prices__contact .contact__header h3 {
     text-align: right;
     margin-top: 39px;
     font-family: 'Inter';
@@ -425,7 +426,6 @@ section.prices {
 
 .contact__content button.btn__orange {
     min-width: 161px;
-    margin-top: 7px;
     padding: 11px 33px;
     font-family: 'Inika';
     font-weight: 400;
