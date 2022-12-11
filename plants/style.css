@@ -44,8 +44,12 @@ header .header__wrapper {
     width: 100%;
 }
 
+.header__wrapper .logo {
+    font-size: 0;
+}
+
 .header__wrapper .logo img {
-    width: 20px;
+    width: 23px;
     height: 20px;
 }
 
@@ -54,13 +58,13 @@ header .header__wrapper {
     font-weight: 400;
     font-size: 16px;
     line-height: 30px;
-    margin-left: -3px;
     color: #000000;
 }
 
 .header__wrapper .navigation ul {
     display: flex;
-    gap: 49px;
+    gap: 47px;
+    padding: 0 2px;
 }
 
 .header__wrapper .navigation ul li {
@@ -108,8 +112,8 @@ section.welcome {
 
 .welcome__wrapper .img__background img {
     width: 458px;
-    height: 416px;
-    margin-left: -4px;
+    height: 422px;
+    margin-left: -6px;
 }
 
 .welcome .welcome__wrapper .welcome__content {
@@ -141,7 +145,7 @@ section.welcome {
     font-weight: 400;
     font-size: 20px;
     line-height: 35px;
-    padding: 44px 0 48px 0;
+    padding: 44px 0 47px 0;
     color: var(--text);
 }
 
@@ -194,7 +198,7 @@ section.about {
     flex-direction: column;
     align-content: flex-start;
     justify-items: center;
-    margin-top: 162px;
+    margin-top: 161px;
     width: 605px;
     flex: 1;
 } 
@@ -340,7 +344,7 @@ section.service {
 /* Prices */
 
 section.prices {
-    height: 560px;
+    height: 558px;
     width: 100vw;
     background-color: #FFFFFF;
 }
@@ -495,13 +499,12 @@ section.contacts {
 .contacts__wrapper .farmer {
     display: flex;
     align-items: flex-end;
-    margin-bottom: 10px;
 }
 
 .contacts__wrapper .contacts__header {
     display: flex;
     justify-content: center;
-    margin-top: 25px;
+    margin-top: 27px;
     margin-left: 45px;
 }
 
@@ -523,7 +526,7 @@ section.contacts {
     align-items: center;
     width: 100%;
     min-height: 50px;
-    margin-top: 146px;
+    margin-top: 148px;
     background: #D6E7D2;
     border: 1px solid #D6E7D2;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -574,7 +577,6 @@ footer .footer__wrapper {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 4px;
     align-items:center;
     font-family: 'Inter';
     font-weight: 400;
