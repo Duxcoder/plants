@@ -26,7 +26,7 @@ a {
     margin: 0 auto;
     padding: 0 109px;
     min-height: 100%;
-    width: 1440px;
+    max-width: 1440px;
 }
 
 /* Header */
@@ -89,11 +89,15 @@ header .header__wrapper {
     color: var(--orange);
 }
 
+.header__wrapper .hamburger_menu {
+    display: none;
+}
 /* Welcome */
 
 section.welcome {
-    height: 532px;
+    min-height: 532px;
     width: 100vw;
+    padding-bottom: 58px;
     background-color: var(--background);
 }
 
@@ -107,12 +111,12 @@ section.welcome {
     display: flex;
     align-items: center;
     justify-content: start;
-    flex: 1;
+    width: 458px;
+    margin-top: 54px;
 }
 
 .welcome__wrapper .img__background img {
-    width: 458px;
-    height: 422px;
+    width: 100%;
     margin-left: -6px;
 }
 
@@ -121,10 +125,9 @@ section.welcome {
     flex-direction: column;
     align-content: flex-start;
     justify-items: center;
-    margin-left: 125px;
+    margin-left: 10px;
     margin-top: 98px;
-    width: 550px;
-    flex: 1;
+    width: 549px;
 } 
 
 .welcome__wrapper .welcome__content h1 {
@@ -630,4 +633,201 @@ footer .footer__wrapper {
 
 .socials li a:hover {
     transform: scale(0.9);
+}
+
+/*  */
+/* Adaptive options */
+/*  */
+
+@media screen and (max-width: 768px){ 
+    .container {
+        padding: 0 50px;
+        max-width: 768px;
+}
+
+/* Header adaptive 768 */
+
+    header {
+        height: 117px;
+    }
+
+    header .header__wrapper {
+        margin-top: 4px;
+    }
+
+    .header__wrapper .logo img {
+        width: 20px;
+    }
+
+/* Welcome adaptive 768 */
+
+    section.welcome {
+        min-height: 420px;
+    }
+    .welcome .welcome__wrapper {
+        flex-direction: row-reverse;
+    }
+
+    .welcome .welcome__wrapper .welcome__content {
+        margin-left: 0;
+        margin-top: 40px;
+        width: 340px;
+    }
+
+    .welcome__wrapper .welcome__content h1 {
+        font-size: 35px;
+        line-height: 50px;
+    }
+
+    .welcome .welcome__wrapper .img__background {
+        align-items: flex-start;
+        justify-content: flex-end;
+        flex: none;
+        width: 280px;
+        margin-top: 40px;
+    }
+
+    .welcome__wrapper .img__background img {
+        width: 100%;
+    }
+
+    .welcome__wrapper .welcome__content p {
+        padding: 31px 0 35px 5px;
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+}
+
+@media screen and (max-width: 640px){ 
+    
+/* Header adaptive 640 */
+
+    .header__wrapper .navigation {
+        display: none;
+    }
+
+    .header__wrapper .navigation.hamburger {
+        display: block;
+        position: absolute;
+        width: 60%;
+        height: 100vh;
+        right: 0;
+        top: 0;
+        background-color: #FFFFFF;
+    }
+
+    .navigation.hamburger ul {
+        flex-direction: column;
+        gap: 26px;
+        margin-top: 100px;
+    }
+
+    .navigation.hamburger li {
+        width: 100%;
+        margin-left: 28px;
+        border-radius: 10px 0 0 10px;
+        background: var(--background);
+        transition: 0.3s;
+    }
+
+    .navigation.hamburger li a {
+        display: block;
+        padding-left: 40px;
+    }
+
+    .navigation.hamburger li:hover {
+        margin-left: 18px;
+        width: 100%;
+    }
+
+    .header__wrapper .hamburger_menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 40px;
+        height: 26px;
+        margin-top: -6px;
+        z-index: 1;
+        cursor: pointer;
+    }
+
+    .hamburger_menu .line {
+        width: 100%;
+        height: 2px;
+        background-color: var(--gray);
+    }
+
+/* Welcome adaptive 640 */
+
+    .welcome .welcome__wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .welcome .welcome__wrapper .welcome__content {
+        width: 100%;
+    }
+
+    .welcome .welcome__wrapper .img__background {
+        width: 140px;
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 380px){ 
+    .container {
+        padding: 0 25px;
+        max-width: 380x;
+}
+
+/* Header adaptive 380 */
+
+    header {
+        height: 96px;
+    }
+
+    header .header__wrapper {
+        margin-top: 4px;
+    }
+
+    .header__wrapper .logo img {
+        width: 20px;
+    }
+
+    .header__wrapper .navigation.hamburger {
+        width: 70%;
+    }
+
+/* Welcome adaptive 380 */
+
+    section.welcome {
+        min-height: 300px;
+        padding-bottom: 20px;
+    }
+
+    .welcome .welcome__wrapper .welcome__content {
+        margin-left: 0;
+        margin-top: 26px;
+        width: 100%;
+    }
+
+    .welcome__wrapper .welcome__content h1 {
+        font-size: 25px;
+        line-height: 35px;
+    }
+
+    .welcome .welcome__wrapper .img__background {
+        display: none;
+    }
+
+    .welcome__wrapper .welcome__content p {
+        line-height: 25px;
+        padding: 20px 0 26px 0px;
+    }
+
+    .welcome__wrapper .welcome__content button {
+        padding: 5px 15px;
+        font-size: 10px;
+    }
 }
