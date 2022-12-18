@@ -232,8 +232,9 @@ section.about {
 /* Service */
 
 section.service {
-    height: 1300px;
+    min-height: 1300px;
     width: 100vw;
+    padding-bottom: 90px;
     background-color: var(--background);
 }
 
@@ -245,6 +246,7 @@ section.service {
 
 .service__wrapper .service__header {
     display: flex;
+    flex-wrap: wrap;
     min-height: 100px;
     margin-top: 7px;
 }
@@ -252,6 +254,8 @@ section.service {
 .service__header h2 {
     display: flex;
     flex: 1;
+    min-width: 290px;
+    padding-right: 60px;
     font-family: 'Inika';
     font-weight: 400;
     font-size: 40px;
@@ -263,8 +267,8 @@ section.service {
     display: flex;
     flex: 2;
     align-items: center;
-    gap: 38px;
-    margin: 4px 0 0 61px;
+    gap: 5%;
+    margin-top: 4px;
 }
 
 .service__category button {
@@ -289,17 +293,20 @@ section.service {
 
 .service__wrapper .service__content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 53px;
+    column-gap: 116px;
+    row-gap: 53px;
     margin-top: 46px;
 }
 
 .service__content .card {
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
-    width: 330px;
+    width: 27%;
+    min-width: 280px;
     min-height: 450px;
     border-radius: 20px;
 }
@@ -312,7 +319,7 @@ section.service {
 }
 
 .card .img__card img {
-    width: 330px;
+    width: 100%;
     height: 351px;
     object-fit: cover;
 }
@@ -322,6 +329,7 @@ section.service {
     flex-direction: column;
     align-items: center;
     min-height: 100px;
+    padding: 0 6px;
     border: 1px solid #E3E1D5;
     border-radius: 0px 0px 20px 20px;
 }
@@ -336,11 +344,12 @@ section.service {
 }
 
 .card .descr p {
+    padding-bottom: 36px;
     font-family: 'Inter';
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
-    padding-bottom: 36px;
+    text-align: center;
     color: var(--gray);
 }
 
@@ -643,7 +652,7 @@ footer .footer__wrapper {
     .container {
         padding: 0 50px;
         max-width: 768px;
-}
+    }
 
     /* Header adaptive 768 */
 
@@ -664,6 +673,7 @@ footer .footer__wrapper {
     section.welcome {
         min-height: 420px;
     }
+
     .welcome .welcome__wrapper {
         flex-direction: row-reverse;
     }
@@ -728,6 +738,52 @@ footer .footer__wrapper {
     .about .about__wrapper .img__background {
         width: 250px;
         margin-top: 0;
+    }
+
+    /* Service adaptive 768 */
+
+    section.service {
+        min-height: 1780px;
+        padding-bottom: 50px;
+    }
+
+    .service__wrapper .service__header {
+        flex-direction: column;
+        margin-top: 31px;
+    }
+
+    .service__header h2 {
+        max-width: 306px;
+        font-size: 35px;
+        line-height: 46px;
+        padding-right: 0;
+    }
+
+    .service__header .service__category {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 38px;
+        row-gap: 10px;
+        margin-top: 13px;
+    }
+
+    .service__wrapper .service__content {
+        column-gap: 108px;
+        row-gap: 39px;
+        margin-top: 40px;
+    }
+
+    .service__content .card {
+        min-width: 190px;
+        min-height: auto;
+    }
+
+    .card .img__card img {
+        height: 45.5vw;
+    }
+
+    .card .descr p {
+        padding-bottom: 14px;
     }
 }
 
@@ -821,7 +877,7 @@ footer .footer__wrapper {
     .container {
         padding: 0 25px;
         max-width: 380x;
-}
+    }
 
     /* Header adaptive 380 */
 
@@ -897,5 +953,47 @@ footer .footer__wrapper {
     
     .about .about__wrapper .img__background {
         width: 150px;
+    }
+
+    /* Service adaptive 380 */
+
+    section.service {
+        min-height: auto;
+        padding-bottom: 26px;
+    }
+
+    .service__wrapper .service__header {
+        margin-top: 8px;   
+    }
+
+    .service__header h2 {
+        min-width: auto;
+        max-width: 200px;
+        font-size: 25px;
+        line-height: 33px;
+    }
+
+    .service__header .service__category {
+        column-gap: 11px;
+        row-gap: 8px;
+        margin-top: 18px;
+    }
+    
+    .service__category button {
+        min-width: 120px;
+        padding: 4px 31px;
+        font-size: 15px;
+    }
+
+    .service__wrapper .service__content {
+        row-gap: 34px;
+    }
+    
+    .service__content .card {
+        max-width: 280px;
+    }
+
+    .card .img__card img {
+        height: 350px;
     }
 }
