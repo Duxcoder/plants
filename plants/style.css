@@ -617,7 +617,8 @@ footer .footer__wrapper {
 
 .footer__wrapper .year {
     display: flex;
-    gap: 20px;
+    gap: 6.7%;
+    flex: 1;
 }
 
 .footer__wrapper a {
@@ -630,14 +631,21 @@ footer .footer__wrapper {
 }
 
 .footer__wrapper .school {
-    padding-left: 19px;
+    display: flex;
+    justify-content: center;
+    flex: 2;
+}
+
+.footer__wrapper .socials {
+    flex: 1;
 }
 
 .footer__wrapper .socials ul {
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
     margin-top: 20px;
-    gap: 20px;
+    gap: 6.5%;
     padding: 0;
 }
 
@@ -866,6 +874,30 @@ footer .footer__wrapper {
         width: auto;
         height: 250px;
         margin-left: 20px;
+    }
+
+    /* Footer adaptive 768 */
+
+    footer {
+        min-height: 181px;
+        height: 1px;
+    }
+
+    footer .footer__wrapper {
+        flex-direction: column;
+        margin-top: 25px;
+        line-height: 39px;
+    }
+
+    .footer__wrapper .year {
+        justify-content: center;
+        gap: 18%;
+    }
+
+    .footer__wrapper .socials ul {
+        justify-content: center;
+        gap: 21%;
+        padding-bottom: 6px;
     }
     
 }
@@ -1186,5 +1218,24 @@ footer .footer__wrapper {
         height: 125px;
         margin-right: 4px;
         margin-left: 0;
+    }
+
+     /* Footer adaptive 380 */
+
+     footer {
+        min-height: 146px;
+        height: 1px;
+    }
+
+    footer .footer__wrapper {
+        margin-top: 15px;
+    }
+
+    .footer__wrapper .school {
+        flex: 1;
+    }
+    .footer__wrapper .socials ul {
+        margin: 0 0 15px 0;
+        padding: 0;
     }
 }
