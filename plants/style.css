@@ -356,7 +356,7 @@ section.service {
 /* Prices */
 
 section.prices {
-    height: 558px;
+    min-height: 558px;
     width: 100vw;
     background-color: #FFFFFF;
 }
@@ -446,12 +446,13 @@ section.prices {
     display: flex;
     align-items: flex-end;
     flex-direction: column;
-    width: 452px;
+    width: 470px;
 }
 
 .prices__contact .contact__header h3 {
     text-align: right;
     margin-top: 39px;
+    padding-left: 10px;
     font-family: 'Inter';
     font-weight: 700;
     font-size: 40px;
@@ -473,7 +474,7 @@ section.prices {
     min-width: 161px;
     padding: 11px 33px;
     font-family: 'Inika';
-    font-weight: 400;
+    font-weight: 700;
     font-size: 20px;
     line-height: 26px;
     border: 1px solid var(--orange);
@@ -785,6 +786,33 @@ footer .footer__wrapper {
     .card .descr p {
         padding-bottom: 14px;
     }
+
+    /* Prices adaptive 768 */
+
+    section.prices {
+        min-height: 585px;
+        padding-bottom: 20px;
+    }
+
+    .prices .prices__wrapper h2 {
+        font-size: 35px;
+        line-height: 44px;
+        padding-left: 15px;
+    }
+
+    .prices__contact .contact__header h3 {
+        font-size: 25px;
+        line-height: 35px;
+        margin-bottom: 29px;
+    }
+
+    .prices__wrapper .prices__contact {
+        margin-top: 100px;
+    }
+ 
+    .contact__content img {
+        margin-top: 29px;
+    }
 }
 
 @media screen and (max-width: 640px){ 
@@ -870,6 +898,27 @@ footer .footer__wrapper {
 
     .about__wrapper .about__content h2 {
         width: auto;
+    }
+
+    /* Prices adaptive 640 */
+
+    .prices .prices__wrapper h2 {
+        text-align: center;
+    }
+
+    .prices .prices__wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .prices__wrapper .prices__contact {
+        align-items: center;
+        margin-top: 0;
+        width: auto;
+    }
+
+    .prices__contact .contact__header h3 {
+        text-align: center;
     }
 }
 
@@ -996,4 +1045,62 @@ footer .footer__wrapper {
     .card .img__card img {
         height: 350px;
     }
+
+    /* Prices adaptive 380 */
+
+    section.prices {
+        min-height: 512px;
+    }
+    
+    .prices .prices__wrapper h2 {
+        margin-top: 25px;
+        padding-left: 2px;
+        font-size: 25px;
+        line-height: 30px;
+    }
+
+    .prices__block .prices__content {
+        width: 224px;
+        margin-top: 16px;
+        padding: 28px 0;
+        gap: 14px;
+    }
+
+    .prices__content .btn__prices {
+        min-width: 180px;
+        padding: 16px 31px;
+    }
+
+    .btn__prices span {
+        font-size: 15px;
+        line-height: 20px;
+    }
+    
+    .prices__contact .contact__header h3 {
+        font-size: 20px;
+        line-height: 35px;  
+        padding-left: 2px;
+        margin: 19px 0 21px 0;
+    }   
+
+    .prices__wrapper .prices__contact {
+        width: 240px;
+    }
+
+    .contact__content {
+        align-items: center;    
+    }
+
+    .contact__content button.btn__orange {
+        min-width: 120px;
+        padding: 6px 24px;
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .contact__content img {
+        display: none;
+    }
+
+    
 }
