@@ -906,59 +906,149 @@ footer .footer__wrapper {
     
     /* Header adaptive 640 */
 
+    body.inactive {
+        overflow: hidden;
+    }
+
+    .container::after {
+        position: absolute;
+        width: 100vw;
+        height: calc(100vh + 200px);
+        left: 0;
+        top: 0;
+        content: '';
+        background-color: rgba(255, 255, 255, 0.0);
+        transition: .3s;
+        z-index: 1;
+        visibility: hidden;
+    }
+
+    .container.inactive::after {
+        position: absolute;
+        width: 100vw;
+        height: calc(100vh + 200px);
+        left: 0;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.55);
+        content: '';
+        z-index: 1;
+        transition: 0.6s;
+        visibility: visible;
+    }
+
+    header::before {
+        content: '';
+        transition: 0.6s;
+        opacity: 0;
+        transform: translate(140%, 0px);
+    }
+
+    header.inactive::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 60%;
+        height: 113px;
+        background-color: rgb(255, 255, 255);
+        z-index: 3;
+        content: '';
+        transition: 0.6s;
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+
     .header__wrapper .navigation {
-        display: none;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 0;
+        height: calc(100vh + 200px);
+        background-color: #FFFFFF;
+        overflow: auto;
+        z-index: 2;
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(140%, 0px);
+        transition: 0.3s;
     }
 
     .header__wrapper .navigation.hamburger {
-        display: block;
-        position: absolute;
+        transform: translate(0px, 0px);
+        transition: 0.3s;
+        opacity: 1;
+        visibility: visible;
         width: 60%;
-        height: 100vh;
-        right: 0;
-        top: 0;
-        background-color: #FFFFFF;
+        padding-bottom: 200px;
     }
 
-    .navigation.hamburger ul {
+    .header__wrapper .navigation ul {
         flex-direction: column;
         gap: 26px;
-        margin-top: 100px;
+        margin-top: 113px;
+        padding: 0;
     }
 
-    .navigation.hamburger li {
-        width: 100%;
+    .header__wrapper .navigation li {
+        width: calc(100% - 28px);
         margin-left: 28px;
         border-radius: 10px 0 0 10px;
         background: var(--background);
         transition: 0.3s;
     }
 
-    .navigation.hamburger li a {
+    .header__wrapper .navigation li a {
         display: block;
         padding-left: 40px;
     }
 
-    .navigation.hamburger li:hover {
+    .header__wrapper .navigation li:hover {
         margin-left: 18px;
-        width: 100%;
+        width: calc(100% - 18px);
     }
 
     .header__wrapper .hamburger_menu {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
+        row-gap: 6px;
         width: 40px;
         height: 26px;
         margin-top: -6px;
-        z-index: 1;
+        padding: 8px;
+        z-index: 4;
         cursor: pointer;
+        box-sizing: content-box;
     }
 
     .hamburger_menu .line {
-        width: 100%;
+        flex: 1;
+        width: 40px;
         height: 2px;
         background-color: var(--gray);
+        transition: 0.3s;
+   }
+
+    .hamburger_menu.active .line {
+        width: 40px;
+        position: absolute;
+        transition: 0.3s;
+    }
+
+    .hamburger_menu.active .line:first-child {
+        opacity: 0;
+    }
+    .hamburger_menu.active .line:nth-child(2) {
+        transform: rotate(45deg);
+        opacity: 1;
+    }
+    .hamburger_menu.active .line:nth-child(3) {
+        transform: rotate(-45deg);
+        opacity: 1;
+    }
+    .hamburger_menu.active .line:last-child {
+        opacity: 0;
     }
 
     /* Welcome adaptive 640 */
@@ -1220,9 +1310,9 @@ footer .footer__wrapper {
         margin-left: 0;
     }
 
-     /* Footer adaptive 380 */
+    /* Footer adaptive 380 */
 
-     footer {
+    footer {
         min-height: 146px;
         height: 1px;
     }
@@ -1234,6 +1324,7 @@ footer .footer__wrapper {
     .footer__wrapper .school {
         flex: 1;
     }
+
     .footer__wrapper .socials ul {
         margin: 0 0 15px 0;
         padding: 0;
