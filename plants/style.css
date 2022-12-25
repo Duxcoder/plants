@@ -324,6 +324,10 @@ section.service {
     object-fit: cover;
 }
 
+.card:first-child .img__card img {
+    filter: contrast(0.9);
+}
+
 .card .descr {
     display: flex;
     flex-direction: column;
@@ -533,7 +537,6 @@ section.contacts {
     min-width: 200px;
     margin-top: 27px;
     margin-left: 106px;
-    
 }
 
 .contacts__wrapper__content .contacts__header h2 {
@@ -545,28 +548,37 @@ section.contacts {
 }
 
 .contacts__wrapper__content .contacts__content {
+    position: relative;
     display: flex;
     justify-content: flex-end;
 }
 
 .contacts__content .address__block {
-    display: flex;
     position: relative;
-    align-items: center;
     width: 55%;
     min-width: 284px;
+}
+
+.contacts__content .address__block select{
+    display: flex;
+    align-items: center;
+    width: 100%;
     min-height: 50px;
     margin-top: 2px;
     background: #D6E7D2;
     border: 1px solid #D6E7D2;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 40px;
+    letter-spacing: 0.05em;
+    padding-left: 17px;
+    color: var(--gray);
     cursor: pointer;
     transition: all .3s;
-}
-
-.contacts__content .address__block:hover {
-    background: #C1E698;
-    border: 1px solid #D6E7D2;
+    appearance: none;
+    outline: none;
 }
 
 .contacts__content .address__block::after {
@@ -574,8 +586,8 @@ section.contacts {
     display: flex;
     justify-content: center;
     align-items: center;
-    top: calc(50% - 8px);
-    right: 34px;
+    top: calc(50% - 7px);
+    right: 35px;
     content: url('img/arrow_white.svg');
     color: #FFFFFF;
     width: 16px;
@@ -583,6 +595,12 @@ section.contacts {
     border-radius: 50%;
     line-height: 0px;
     background-color: #AEA1A1;
+    pointer-events: none;
+}
+
+.contacts__content .address__block select:hover {
+    background: #C1E698;
+    border: 1px solid #D6E7D2;
 }
 
 .contacts__content .address__block span {
@@ -1296,8 +1314,8 @@ footer .footer__wrapper {
     }
 
     .contacts__content .address__block {
-        margin-top: 60px;
-        width: 92%;
+        margin-top: 58px;
+        width: 91.5%;
     }
     
     .contacts__content .address__block::after {
