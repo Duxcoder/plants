@@ -325,7 +325,7 @@ section.service {
 }
 
 .card:first-child .img__card img {
-    filter: contrast(0.9);
+    filter: contrast(0.8);
 }
 
 .card .descr {
@@ -1031,7 +1031,7 @@ footer .footer__wrapper {
         flex-direction: column;
         justify-content: center;
         row-gap: 6px;
-        width: 40px;
+        width: 32px;
         height: 26px;
         margin-top: -6px;
         padding: 8px;
