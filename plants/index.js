@@ -53,3 +53,41 @@ function HamburgerMenu(){
 }
 
 HamburgerMenu()
+
+// Service choice
+
+const domBtnsService = document.querySelectorAll('.service__btn');
+const domCards = document.querySelectorAll('[data-card]');
+
+console.log(domBtnsService, domCards);
+let activeBtns = []
+const addToActiveBtns = (item) => {
+    if (activeBtns.length < 2) {
+        activeBtns.push(item)
+    }
+    if (activeBtns.length === 2) {
+       let arr = Array.from(domBtnsService)
+       arr.filter((elem) => !activeBtns.includes(elem))[0].classList.add('disabled')
+    }
+    activeBtns.forEach(elem => elem.classList.add('active'))
+}
+const removeActiveBtns = (item) => {
+   item.classList.remove('active');
+   activeBtns = activeBtns.filter(elem => elem != item);
+   domBtnsService.forEach(elem => elem.classList.remove('disabled'));
+}
+
+document.addEventListener('click', (e) => {
+    domBtnsService.forEach(item => {
+        if (e.target.name === item.name){
+            activeBtns.includes(item) ? removeActiveBtns(item) : addToActiveBtns(item);
+            if (activeBtns){
+                let arrCards = Array.from(domCards)
+                let arr = [];
+                activeBtns.forEach(btn => {arr = [...arr, ...arrCards.filter(card => card.dataset.card === btn.name)]})
+                domCards.forEach(elem => elem.classList.remove('active'));
+                arr.forEach(elem => elem.classList.add('active'))
+            }
+        }
+    }) 
+})

@@ -311,6 +311,22 @@ section.service {
     border-radius: 20px;
 }
 
+.service__category button.active {
+    background-color: var(--orange);
+    color: #FFFFFF;
+}
+
+.service__category button.disabled {
+    background-color: #6e3d28;
+    color: #FFFFFF;
+    border-color: #6e3d28;
+    pointer-events: none;
+}
+
+.service__content .card.active {
+    filter: blur(2px);
+}
+
 .service__content .card .img__card {
     display: flex;
     justify-content: center;
