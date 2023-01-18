@@ -59,7 +59,6 @@ HamburgerMenu()
 const domBtnsService = document.querySelectorAll('.service__btn');
 const domCards = document.querySelectorAll('[data-card]');
 
-console.log(domBtnsService, domCards);
 let activeBtns = []
 const addToActiveBtns = (item) => {
     if (activeBtns.length < 2) {
@@ -81,13 +80,53 @@ document.addEventListener('click', (e) => {
     domBtnsService.forEach(item => {
         if (e.target.name === item.name){
             activeBtns.includes(item) ? removeActiveBtns(item) : addToActiveBtns(item);
-            if (activeBtns){
+            if (activeBtns.length){
                 let arrCards = Array.from(domCards)
                 let arr = [];
                 activeBtns.forEach(btn => {arr = [...arr, ...arrCards.filter(card => card.dataset.card === btn.name)]})
-                domCards.forEach(elem => elem.classList.remove('active'));
-                arr.forEach(elem => elem.classList.add('active'))
+                domCards.forEach(elem => elem.classList.add('active'));
+                arr.forEach(elem => elem.classList.remove('active'))
+            } else {
+                domCards.forEach(elem => elem.classList.remove('active'))
             }
         }
     }) 
+})
+
+
+// Accordion
+
+const domPrices = document.querySelector('.prices__content')
+const domBtnsPrices = document.querySelectorAll('.btn__prices');
+let openedPriceCard = '';
+
+domPrices.addEventListener('mousedown', (e) => {
+    const target = e.target
+    console.dir(e.layerY)
+    domBtnsPrices.forEach(item => {
+        if ((item === target && e.layerY <= 52) || 
+        (target.parentElement.parentElement === item && e.layerY <= 52)
+        || target.parentElement === item && e.layerY <= 52) {
+            if (!openedPriceCard){
+                item.children[1].classList.toggle('active'); 
+                item.classList.toggle('active');
+                openedPriceCard = item
+            } else {
+                if (openedPriceCard === item) {
+                    item.children[1].classList.toggle('active'); 
+                    item.classList.toggle('active');
+                    openedPriceCard = '';
+                } 
+            }
+        }
+        if (e.target.className === 'btn__order'){
+            window.location = '#contacts';
+        }
+    })
+})
+
+domPrices.addEventListener('mousemove', (e) => {
+    if (e.layerY >= 52 && 'btn__order' != e.target.className) {e.target.style.cursor = 'auto'}
+    else {e.target.style.cursor = 'pointer'}
+
 })

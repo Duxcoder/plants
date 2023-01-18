@@ -309,6 +309,7 @@ section.service {
     min-width: 280px;
     min-height: 450px;
     border-radius: 20px;
+    transition: 0.3s;
 }
 
 .service__category button.active {
@@ -324,7 +325,7 @@ section.service {
 }
 
 .service__content .card.active {
-    filter: blur(2px);
+    filter: blur(3px);
 }
 
 .service__content .card .img__card {
@@ -412,16 +413,18 @@ section.prices {
     margin-top: 27px;
     height: auto;
     width: 332px;
+    margin-bottom: 40px;
     border: 1px solid #E3E1D5;
     border-radius: 20px;
 }
 
 .prices__content .btn__prices {
     display: flex;
+    flex-direction: column;
     position: relative;
-    align-items: center;
-    min-width: 250px;
-    height: 50px;
+    align-items: flex-start;
+    width: 250px;
+    min-height: 50px;
     padding: 16px 40px;
     background: var(--background);
     border-radius: 20px;
@@ -433,12 +436,22 @@ section.prices {
     background-color: #D6E7D2;
 }
 
+.prices__content .btn__prices.active{
+    background-color: #D6E7D2;
+}
+
+.prices__content .btn__prices.active::after {
+    background-color: #AEA1A1;
+    content: url('img/arrow_white.svg');
+    transform: rotate(180deg);
+}
+
 .prices__content .btn__prices::after {
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    top: calc(50% - 8px);
+    top: 18px;
     right: 40px;
     content: url('img/arrow.svg');
     width: 16px;
@@ -461,6 +474,68 @@ section.prices {
     line-height: 20px;
     color: #000000;
 }
+
+.btn__prices .descr__prices {
+    display: none;
+}
+
+.btn__prices .descr__prices.active{
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+.descr__prices .text__descr {
+    margin-top: 12px;
+    padding-top: 6px;
+    font-size: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    color: #717171;
+    border-top: 1px solid #aea1a1;
+}
+
+.descr__prices .price__descr {
+    font-size: 12px;
+    padding-top: 8px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+}
+
+.descr__prices .btn__order {
+    width: 86px;
+    height: 25px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    color: #717171;
+    background: #FFFFFF;
+    border-radius: 10px;
+    margin-top: 12px;
+    transition: 0.3s;
+}
+
+.descr__prices .btn__order:hover {
+    color: #FFFFFF;
+    background: #9cb29b;
+}
+
+
+.descr__prices .orange {
+    color: var(--orange);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.descr__prices .small {
+    font-size: 12px;
+    color: var(--orange);
+    font-weight: 700;
+}
+
 
 .prices__wrapper .prices__contact {
     display: flex;
