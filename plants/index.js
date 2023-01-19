@@ -107,16 +107,18 @@ domPrices.addEventListener('mousedown', (e) => {
         if ((item === target && e.layerY <= 52) || 
         (target.parentElement.parentElement === item && e.layerY <= 52)
         || target.parentElement === item && e.layerY <= 52) {
-            if (!openedPriceCard){
-                item.children[1].classList.toggle('active'); 
-                item.classList.toggle('active');
-                openedPriceCard = item
+            if (item === openedPriceCard) {
+                item.children[1].classList.remove('active'); 
+                item.classList.remove('active'); 
+                openedPriceCard = '';
             } else {
-                if (openedPriceCard === item) {
-                    item.children[1].classList.toggle('active'); 
-                    item.classList.toggle('active');
-                    openedPriceCard = '';
-                } 
+                domBtnsPrices.forEach(btn => {
+                    btn.children[1].classList.remove('active'); 
+                    btn.classList.remove('active');  
+                })
+                item.children[1].classList.add('active'); 
+                item.classList.add('active');
+                openedPriceCard = item;
             }
         }
         if (e.target.className === 'btn__order'){
