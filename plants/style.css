@@ -481,6 +481,7 @@ section.prices {
     height: 10px;
     transition: 0.1s;
     visibility: hidden;
+    overflow: hidden;
 }
 
 .btn__prices .descr__prices.active{
@@ -499,7 +500,7 @@ section.prices {
     font-style: normal;
     font-weight: 300;
     line-height: 10px;
-    color: #717171;
+    color: var(--gray);
     border-top: 1px solid #aea1a1;
 }
 
@@ -518,7 +519,7 @@ section.prices {
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
-    color: #717171;
+    color: var(--gray);
     background: #FFFFFF;
     border-radius: 10px;
     margin-top: 7px;
@@ -601,9 +602,9 @@ section.prices {
 
 section.contacts {
     min-height: 550px;
-    height: 1px;
     width: 100vw;
     background-color: var(--background);
+    height: 1px;
 }
 
 .contacts .contacts__wrapper {
@@ -657,8 +658,9 @@ section.contacts {
     min-width: 284px;
 }
 
-.contacts__content .address__block select{
+.contacts__content .address__block .selected{
     display: flex;
+    position: relative;
     align-items: center;
     width: 100%;
     min-height: 50px;
@@ -674,31 +676,40 @@ section.contacts {
     padding-left: 17px;
     color: var(--gray);
     cursor: pointer;
-    transition: all .3s;
-    appearance: none;
-    outline: none;
+    transition: 0.3s;
+    z-index: 2;
 }
 
-.contacts__content .address__block::after {
+.contacts__content .address__block .selected.active,
+.contacts__content .address__block .selected.activeAlways,
+.contacts__content .address__block .selected:hover {
+    background: #C1E698;
+    border: 1px solid #D6E7D2;
+    box-shadow: none;
+}
+
+.contacts__content .address__block .selected::after {
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    top: calc(50% - 7px);
-    right: 35px;
+    top: 16px;   
+    right: 34px;
     content: url('img/arrow_white.svg');
     color: #FFFFFF;
     width: 16px;
-    height: 16px;
+    height: 14px;
+    padding-bottom: 2px;
     border-radius: 50%;
     line-height: 0px;
     background-color: #AEA1A1;
     pointer-events: none;
+    transition: 0.3s;
 }
 
-.contacts__content .address__block select:hover {
-    background: #C1E698;
-    border: 1px solid #D6E7D2;
+.contacts__content .address__block .selected.active::after {
+    transform: rotate(180deg);
+    background: #8BA07E;
 }
 
 .contacts__content .address__block span {
@@ -707,8 +718,140 @@ section.contacts {
     font-size: 20px;
     line-height: 40px;
     letter-spacing: 0.05em;
-    padding-left: 17px;
     color: var(--gray);
+}
+
+.address__block .options {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 234px;
+    margin-top: -10px;
+    gap: 4px;
+    padding: 20px 17px;
+    color: #499A18;
+    background: #DCE9D9;
+    transition: 0.4s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.address__block .options.active {
+    min-height: 50px;
+    visibility: visible;
+    opacity: 1;
+    margin-top: 0px;
+    z-index: 1;
+}
+
+.options .option {
+    width: 92%;
+    margin-left: 17px;
+    padding-left: 6px;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 29px;
+    letter-spacing: 0.05em;
+    border-bottom: solid 1px #D9D9D9;
+    cursor: pointer;
+    list-style-type: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.options.active .option {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.3s;
+    padding-top: 13px;
+}
+
+.options.active .option:hover {
+    color: var(--gray);
+    border-bottom: solid 1px var(--gray);
+}
+
+.address__block .city__card {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-top: 47px;
+    padding: 17px 33px 32px 33px;
+    background: transparent;
+    border: solid 1px #000;
+    border-radius: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.address__block .city__card.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.address__block .city__card .descr {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+.descr .labels {
+    display:flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.descr .labels span {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 40px;
+    letter-spacing: 0.05em;
+    color: #000000;
+}
+.descr .fields {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-left: 4px;
+}
+.descr .data {
+    display: inline;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 40px;
+    letter-spacing: 0.05em;
+    color: var(--gray)
+}
+
+.address__block .call_href {
+    margin-top: 18px;
+}
+.address__block .call_us {
+    color: var(--gray);
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 13px;
+    padding: 5px 45px;
+    border: solid 1px var(--orange);
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.address__block .call_us:hover {
+    background: var(--orange);
+    color: #FFFFFF;
 }
 
 /* Footer */
@@ -979,10 +1122,22 @@ footer .footer__wrapper {
         width: 70%;
         max-width: 450px;
         margin-top: 66px;
+        transition: 0.3s;
+    }
+
+    .contacts__content .address__block.activeAlways {
+        width: 70%;
+        max-width: 450px;
+        margin-top: 24px;
+    }
+
+    .address__block .city__card.active {
+        margin-top: 61px;
     }
 
     .contacts__wrapper .farmer {
         justify-content: center;
+        /* margin-top: 245px; */
     }
 
     .contacts__wrapper .farmer img {
@@ -992,6 +1147,13 @@ footer .footer__wrapper {
         margin-left: 20px;
     }
 
+    .address__block .city__card.active { 
+        position: relative;
+    }
+
+    .city__card .call_href {
+        margin-top: 18px;
+    }
     /* Footer adaptive 768 */
 
     footer {
@@ -1355,13 +1517,20 @@ footer .footer__wrapper {
     .prices__block .prices__content {
         width: 224px;
         margin-top: 16px;
+        margin-bottom: 0px;
         padding: 28px 0;
         gap: 14px;
     }
 
     .prices__content .btn__prices {
         min-width: 180px;
+        width: 180px;
         padding: 16px 31px;
+    }
+
+    .prices__content .btn__prices.active {
+        background-color: #D6E7D2;
+        height: 170px;
     }
 
     .btn__prices span {
@@ -1399,7 +1568,6 @@ footer .footer__wrapper {
 
     section.contacts {
         min-height: 445px;
-        height: 1px;
     }
 
     .contacts__wrapper__content .contacts__header {
@@ -1412,18 +1580,84 @@ footer .footer__wrapper {
     }
 
     .contacts__content .address__block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin-top: 58px;
+        width: 100%;
+    }
+    .contacts__content .address__block .select {
         width: 91.5%;
     }
+    .contacts__content .address__block .selected {
+        margin-top: 0;
+    }
+    .contacts__content .address__block .selected::after {
+        right: 18px;
+    }
     
+    .contacts__content .address__block .selected.activeAlways, 
+    .contacts__content .address__block .selected:hover {
+        padding-left: 21px;
+    }
     .contacts__content .address__block::after {
         right: 23px;
     }
 
+    .contacts__content .address__block.activeAlways {
+        width: 100%;
+    }
+
+    .address__block .city__card {
+        transform: translateY(10px);
+        transition: transform 0.3s;
+    }
+
+    .address__block .city__card.active {
+        position: relative;
+        width: 85.5%;
+        margin-top: 47px;
+        padding: 33px 22px 22px 38px;
+        transform: translateY(0px);
+    }
+
+    .address__block .options { 
+        width: 91.5%;
+    }
+    
+    .descr .labels {
+        flex: 1;
+        gap: 16px;
+    }
+
+    .descr .labels span,
+    .descr .data {
+        line-height: 20px;
+    }
+
+    .descr .fields {
+        gap: 17px;
+    }
+
+    .address__block .call_us {
+        margin-top: 15px;
+    }
+    .contacts__wrapper .farmer {
+        margin-top: 132px;
+        z-index: 1;
+        transition: opacity 0.3s;
+    }
     .contacts__wrapper .farmer img {
         height: 125px;
         margin-right: 4px;
         margin-left: 0;
+    }
+
+    .contacts__wrapper .farmer.inactive {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        z-index: -2;
     }
 
     /* Footer adaptive 380 */
