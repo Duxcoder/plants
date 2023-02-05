@@ -84,13 +84,13 @@
                     <div class="service__header">
                         <h2>Service and our projects</h2>
                         <div class="service__category">
-                            <button>Gardens</button>
-                            <button>Lawn</button>
-                            <button>Planting</button>
+                            <button class="service__btn" name="garden">Gardens</button>
+                            <button class="service__btn" name="lawn">Lawn</button>
+                            <button class="service__btn" name="planting">Planting</button>
                         </div>
                     </div>
                     <div class="service__content">
-                        <div class="card">
+                        <div class="card" data-card="garden">
                             <div class="img__card">
                                 <img src="img/service/plant.jpg" alt="plant">
                             </div>
@@ -99,7 +99,7 @@
                                 <p>Lorem Ipsum has been the industry</p>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card" data-card="planting">
                             <div class="img__card">
                                 <img src="img/service/lemon.jpg" alt="lemon">
                             </div>
@@ -108,7 +108,7 @@
                                 <p>Lorem Ipsum has been the industry</p>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card" data-card="lawn">
                             <div class="img__card">
                                 <img src="img/service/hand.jpg" alt="hand">
                             </div>
@@ -117,7 +117,7 @@
                                 <p>Lorem Ipsum has been the industry</p>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card" data-card="planting">
                             <div class="img__card">
                                 <img src="img/service/planting.jpg" alt="planting">
                             </div>
@@ -126,7 +126,7 @@
                                 <p>Lorem Ipsum has been the industry</p>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card" data-card="garden">
                             <div class="img__card">
                                 <img src="img/service/garden.jpg" alt="garden">
                             </div>
@@ -135,7 +135,7 @@
                                 <p>Lorem Ipsum has been the industry</p>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card" data-card="planting">
                             <div class="img__card">
                                 <img src="img/service/cactus.jpg" alt="cactus">
                             </div>
@@ -158,12 +158,33 @@
                         <div class="prices__content">
                             <div class="btn__prices">
                                 <span>Basics</span>
+                                <div class="descr__prices">
+                                    <div class="text__descr">Release of Letraset sheets containing Lorem Ipsum passages, and more recently</div>
+                                    <div class="price__descr">
+                                        <span class="orange"><span class="small">$</span>15</span> / per hour
+                                    </div>
+                                    <button class="btn__order">Order</button>
+                                </div>
                             </div>
                             <div class="btn__prices">
                                 <span>Standard</span>
+                                <div class="descr__prices">
+                                    <div class="text__descr">Release of Letraset sheets containing Lorem Ipsum passages, and more recently</div>
+                                    <div class="price__descr">
+                                        <span class="orange"><span class="small">$</span>25</span> / per hour
+                                    </div>
+                                    <button class="btn__order">Order</button>
+                                </div>
                             </div>
                             <div class="btn__prices">
                                 <span>Pro care</span>
+                                <div class="descr__prices">
+                                    <div class="text__descr">Release of Letraset sheets containing Lorem Ipsum passages, and more recently</div>
+                                    <div class="price__descr">
+                                        <span class="orange"><span class="small">$</span>35</span> / per hour
+                                    </div>
+                                    <button class="btn__order">Order</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -191,13 +212,32 @@
                         </div>
                         <div class="contacts__content">
                             <div class="address__block">
-                                <select>
-                                    <option selected disabled> <span>City</span></option>
-                                    <option value="Canandaigua">Canandaigua, NY</option>
-                                    <option value="NewYork">New York City</option>
-                                    <option value="Yonkers">Yonkers, NY</option>
-                                    <option value="Sherrill">Sherrill, NY</option>
-                                </select>
+                                <div class="select">
+                                    <div class="selected"><span>City</span></div>
+                                    <ul class="options">
+                                        <li class="option" data-value="Canandaigua">Canandaigua, NY</li>
+                                        <li class="option" data-value="NewYork">New York City</li>
+                                        <li class="option" data-value="Yonkers">Yonkers, NY</li>
+                                        <li class="option" data-value="Sherrill">Sherrill, NY</li>
+                                    </ul>
+                                </div>
+                                <div class="city__card">
+                                    <div class="descr">
+                                        <div class="labels">
+                                            <span>City:</span>
+                                            <span>Phone:</span>
+                                            <span>Office address:</span>
+                                        </div>
+                                        <div class="fields">
+                                            <div class="city_field data"></div>
+                                            <div class="phone_field data"></div>
+                                            <div class="address_field data"></div>
+                                        </div>
+                                    </div>
+                                    <a class="call_href">
+                                        <div class="call_us">Call us</div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
