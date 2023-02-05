@@ -1,11 +1,10 @@
 'use strict'
 
 console.log(`
-1: "24" \n
-2: "24" \n
-3: "15" \n
-4: "22" \n
-Score: "85"
+1: "50" \n
+2: "50" \n
+3: "25" \n
+Score: "125"
 `);
 
 // Hamburger menu
