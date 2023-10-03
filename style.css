@@ -128,7 +128,7 @@ section.welcome {
     margin-left: 10px;
     margin-top: 98px;
     width: 549px;
-} 
+}
 
 .welcome__wrapper .welcome__content h1 {
     font-family: 'Inter';
@@ -152,7 +152,9 @@ section.welcome {
     color: var(--text);
 }
 
-.welcome__wrapper .welcome__content button {
+.welcome__wrapper .welcome__content .btn {
+    font-family: Arial, Helvetica, sans-serif;
+    width: fit-content;
     font-size: 16px;
     line-height: 20px;
     display: flex;
@@ -167,10 +169,10 @@ section.welcome {
     transition: all .3s;
 }
 
-.welcome__wrapper .welcome__content button:hover {
+.welcome__wrapper .welcome__content .btn:hover {
     background-color: var(--orange);
     color: #FFFFFF;
-    
+
 }
 /* About */
 
@@ -204,7 +206,7 @@ section.about {
     justify-items: center;
     margin-top: 161px;
     width: 50%;
-} 
+}
 
 .about__wrapper .about__content h2 {
     font-family: 'Inika';
@@ -695,7 +697,7 @@ section.contacts {
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 16px;   
+    top: 16px;
     right: 34px;
     content: url('img/arrow_white.svg');
     color: #FFFFFF;
@@ -935,7 +937,7 @@ footer .footer__wrapper {
 /* Adaptive options */
 /*  */
 
-@media screen and (max-width: 768px){ 
+@media screen and (max-width: 768px){
     .container {
         padding: 0 50px;
         max-width: 768px;
@@ -1021,7 +1023,7 @@ footer .footer__wrapper {
     .about__wrapper .about__content p {
         padding: 50px 0 48px 0;
     }
-    
+
     .about .about__wrapper .img__background {
         width: 250px;
         margin-top: 0;
@@ -1095,7 +1097,7 @@ footer .footer__wrapper {
     .prices__wrapper .prices__contact {
         margin-top: 100px;
     }
- 
+
     .contact__content img {
         margin-top: 29px;
     }
@@ -1149,7 +1151,7 @@ footer .footer__wrapper {
         margin-left: 20px;
     }
 
-    .address__block .city__card.active { 
+    .address__block .city__card.active {
         position: relative;
     }
 
@@ -1179,11 +1181,11 @@ footer .footer__wrapper {
         gap: 21%;
         padding-bottom: 6px;
     }
-    
+
 }
 
-@media screen and (max-width: 640px){ 
-    
+@media screen and (max-width: 640px){
+
     /* Header adaptive 640 */
 
     body.inactive {
@@ -1379,7 +1381,7 @@ footer .footer__wrapper {
     }
 }
 
-@media screen and (max-width: 380px){ 
+@media screen and (max-width: 380px){
     .container {
         padding: 0 25px;
         max-width: 380px;
@@ -1456,7 +1458,7 @@ footer .footer__wrapper {
         line-height: 25px;
         padding: 13px 0 0 0;
     }
-    
+
     .about .about__wrapper .img__background {
         width: 150px;
     }
@@ -1469,7 +1471,7 @@ footer .footer__wrapper {
     }
 
     .service__wrapper .service__header {
-        margin-top: 8px;   
+        margin-top: 8px;
     }
 
     .service__header h2 {
@@ -1484,7 +1486,7 @@ footer .footer__wrapper {
         row-gap: 8px;
         margin-top: 18px;
     }
-    
+
     .service__category button {
         min-width: 120px;
         padding: 4px 31px;
@@ -1494,7 +1496,7 @@ footer .footer__wrapper {
     .service__wrapper .service__content {
         row-gap: 34px;
     }
-    
+
     .service__content .card {
         max-width: 280px;
     }
@@ -1539,20 +1541,20 @@ footer .footer__wrapper {
         font-size: 15px;
         line-height: 20px;
     }
-    
+
     .prices__contact .contact__header h3 {
         font-size: 20px;
-        line-height: 35px;  
+        line-height: 35px;
         padding-left: 2px;
         margin: 19px 0 21px 0;
-    }   
+    }
 
     .prices__wrapper .prices__contact {
         width: 240px;
     }
 
     .contact__content {
-        align-items: center;    
+        align-items: center;
     }
 
     .contact__content button.btn__orange {
@@ -1597,8 +1599,8 @@ footer .footer__wrapper {
     .contacts__content .address__block .selected::after {
         right: 18px;
     }
-    
-    .contacts__content .address__block .selected.activeAlways, 
+
+    .contacts__content .address__block .selected.activeAlways,
     .contacts__content .address__block .selected:hover {
         padding-left: 21px;
     }
@@ -1623,10 +1625,10 @@ footer .footer__wrapper {
         transform: translateY(0px);
     }
 
-    .address__block .options { 
+    .address__block .options {
         width: 91.5%;
     }
-    
+
     .descr .labels {
         flex: 1;
         gap: 16px;
